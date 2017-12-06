@@ -1,0 +1,164 @@
+entity RnsQuotation {
+	catgName String,
+    quoteNumber String,
+    quoteType String,
+    validity Instant,
+    internalRemarks String,
+	createdOn Instant
+}
+
+entity RnsQuotationCrmRequest {
+	crmRequestNumber String,
+    requestedBy String,
+    targetPcd LocalDate,
+    merchantRemarks String,
+    date Instant
+}
+
+entity RnsQuotationArticle {
+	articleCode String,
+    articleName String
+}
+
+
+entity RnsQuotationVariant{
+
+}
+
+entity RnsQuotationEventDefination {
+	technology String,
+    defectCode String,
+    text1 String
+}
+
+entity RnsQuotationVendors{
+}
+
+entity RnsQuotationDealTerms{
+	completionBy LocalDate,
+    validUntil Integer,
+    deliverAt String,
+    text2 String
+}
+
+entity RnsRefrMaster {
+	id Integer,
+    subCodeDesc1 String,
+    subCodeDesc2 String,
+    subCodeDesc3 String,
+    subCodeDesc4 String,
+    subCodeDesc5 String,
+    subCodeDesc6 String,
+    subCodeDesc7 String,
+    subCodeDesc8 String,
+    subCodeDesc9 String,
+    subCodeDesc10 String,
+    Status String,
+    createdBy String,
+    createdDate Instant,    
+    lastModifiedBy String    
+}
+
+entity RnsRefrDetails
+{
+	subCode	String,
+    subCodeDesc	String,
+    Status	String,
+    createdBy	String,
+    createdDate Instant,    
+    lastModifiedBy	Instant
+
+}
+
+entity RnsArticleMaster 
+{
+	articleCode	String,
+	articleCodeDesc	String
+}
+
+entity RnsEmpMaster {	
+  empCode	String,
+  empName	String
+}
+
+entity RnsSectorMaster {	
+	sectorCode	String,
+	sectorCodeDesc String
+}
+entity RnsTypeMaster {	
+	typeCode	String,
+	typeCodeDesc	String
+	}
+entity RnsCatgMaster {
+	catgCode	String,
+	catgCodeDesc	String
+}
+
+entity RnsPayTermsMaster {	
+	payTermsCode	String,
+	payTermsCodeDesc	String
+	}
+	
+entity RnsVendorMaster {	
+	vendorCode	String,
+	vendorMasterCode	String,
+	vendorName	String,
+	vendorUserId	Integer
+	userName	String,
+	email	String,
+	mobileNumber	String
+	}
+entity RnsBuyerMaster {	
+	buyerCode	String,
+	buyerName	String
+	}
+    
+entity RnsDelPlaceMaster {	
+	code	String,
+	codeDesc	String
+}
+entity RnsPchMaster {	
+	pchCode	String,
+	pchName	String
+	}
+
+
+
+
+// defining multiple OneToMany relationships with comments
+relationship ManyToOne {
+	/**
+	* A relationship
+	*/
+	RnsRefrMaster{RnscatgCode(catgCode)} to RnsCatgMaster
+    RnsRefrMaster{subcode1(subCode)} to RnsRefrDetails
+    RnsRefrMaster{subcode2(subCode)} to RnsRefrDetails
+    RnsRefrMaster{subcode3(subCode)} to RnsRefrDetails
+    RnsRefrMaster{subcode4(subCode)} to RnsRefrDetails
+    RnsRefrMaster{subcode5(subCode)} to RnsRefrDetails
+    RnsRefrMaster{subcode6(subCode)} to RnsRefrDetails
+    RnsRefrMaster{subcode7(subCode)} to RnsRefrDetails
+    RnsRefrMaster{subcode8(subCode)} to RnsRefrDetails
+    RnsRefrMaster{subcode9(subCode)} to RnsRefrDetails
+    RnsRefrMaster{subcode10(subCode)} to RnsRefrDetails    
+    RnsTypeMaster{RnsCatgCode(catgCode)} to RnsCatgMaster
+    RnsSectorMaster{RnsCatgCode(catgCode)} to RnsCatgMaster
+    RnsQuotation{RnsCatgCode(catgCode)} to RnsCatgMaster
+    RnsQuotationCrmRequest{buyerCode(buyerCode)} to RnsBuyerMaster
+    RnsQuotationCrmRequest{RnsPchMaster(pchCode)} to RnsPchMaster
+    RnsQuotationArticle{RnsArticleMaster(articleCode)} to RnsArticleMaster
+    RnsRefrMaster{RnsQuotationVariant} to RnsQuotationVariant    
+    RnsQuotationEventDefination{RnsType} to RnsTypeMaster
+    RnsQuotationVendors{quotationVendors} to RnsQuotation
+    RnsQuotationVendors{vendor} to RnsVendorMaster
+    RnsQuotationDealTerms{quotationDealTerms} to RnsQuotation
+    RnsQuotationDealTerms{paymentTerms} to RnsPayTermsMaster
+    RnsQuotationDealTerms{deliveryTerms} to RnsDelPlaceMaster  
+}
+
+relationship OneToOne {
+	RnsQuotation{crmRequest} to RnsQuotationCrmRequest
+    RnsQuotation{article} to RnsQuotationArticle
+    RnsQuotationVariant to RnsQuotationEventDefination
+    RnsRefrMaster{RnsQuotationVariant} to RnsQuotationVariant
+    }
