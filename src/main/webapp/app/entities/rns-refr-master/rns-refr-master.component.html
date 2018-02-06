@@ -1,0 +1,120 @@
+<div>
+    <h2>
+        <span>RNS REFR MASTERS</span>
+        <button class="btn btn-primary float-right jh-create-entity create-rns-refr-master" [routerLink]="['/', { outlets: { popup: ['rns-refr-master-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span >
+            Create new RNS REFR MASTER
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="rNS_REFR_MASTERS">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span>ID</span></th>
+            <th><span>R NSCATGCODE</span></th>
+            <th><span>S UBCODE 1</span></th>
+            <th><span>S UBCODEDESC 1</span></th>
+            <th><span>S UBCODE 2</span></th>
+            <th><span>S UBCODEDESC 2</span></th>
+            <th><span>S UBCODE 3</span></th>
+            <th><span>S UBCODEDESC 3</span></th>
+            <th><span>S UBCODE 4</span></th>
+            <th><span>S UBCODEDESC 4</span></th>
+            <th><span>S UBCODE 5</span></th>
+            <th><span>S UBCODEDESC 5</span></th>
+            <th><span>S UBCODE 6</span></th>
+            <th><span>S UBCODEDESC 6</span></th>
+            <th><span>S UBCODE 7</span></th>
+            <th><span>S UBCODEDESC 7</span></th>
+            <th><span>S UBCODE 8</span></th>
+            <th><span>S UBCODEDESC 8</span></th>
+            <th><span>S UBCODE 9</span></th>
+            <th><span>S UBCODEDESC 9</span></th>
+            <th><span>S UBCODE 10</span></th>
+            <th><span>S UBCODEDESC 10</span></th>
+            <th><span>S TATUS</span></th>
+            <th><span>C REATEDBY</span></th>
+            <th><span>C REATEDDATE</span></th>
+            <th><span>L ASTMODIFIEDBY</span></th>
+            <th><span>L ASTMODIFIEDDATE</span></th>
+            <th><span>I D</span></th>
+            <th><span>R NSCATGMASTER</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let rNS_REFR_MASTER of rNS_REFR_MASTERS ;trackBy: trackId">
+                <td><a [routerLink]="['../rns-refr-master', rNS_REFR_MASTER.id ]">{{rNS_REFR_MASTER.id}}</a></td>
+                <td>{{rNS_REFR_MASTER.rNSCATGCODE}}</td>
+                <td>{{rNS_REFR_MASTER.sUBCODE1}}</td>
+                <td>{{rNS_REFR_MASTER.sUBCODEDESC1}}</td>
+                <td>{{rNS_REFR_MASTER.sUBCODE2}}</td>
+                <td>{{rNS_REFR_MASTER.sUBCODEDESC2}}</td>
+                <td>{{rNS_REFR_MASTER.sUBCODE3}}</td>
+                <td>{{rNS_REFR_MASTER.sUBCODEDESC3}}</td>
+                <td>{{rNS_REFR_MASTER.sUBCODE4}}</td>
+                <td>{{rNS_REFR_MASTER.sUBCODEDESC4}}</td>
+                <td>{{rNS_REFR_MASTER.sUBCODE5}}</td>
+                <td>{{rNS_REFR_MASTER.sUBCODEDESC5}}</td>
+                <td>{{rNS_REFR_MASTER.sUBCODE6}}</td>
+                <td>{{rNS_REFR_MASTER.sUBCODEDESC6}}</td>
+                <td>{{rNS_REFR_MASTER.sUBCODE7}}</td>
+                <td>{{rNS_REFR_MASTER.sUBCODEDESC7}}</td>
+                <td>{{rNS_REFR_MASTER.sUBCODE8}}</td>
+                <td>{{rNS_REFR_MASTER.sUBCODEDESC8}}</td>
+                <td>{{rNS_REFR_MASTER.sUBCODE9}}</td>
+                <td>{{rNS_REFR_MASTER.sUBCODEDESC9}}</td>
+                <td>{{rNS_REFR_MASTER.sUBCODE10}}</td>
+                <td>{{rNS_REFR_MASTER.sUBCODEDESC10}}</td>
+                <td>{{rNS_REFR_MASTER.sTATUS}}</td>
+                <td>{{rNS_REFR_MASTER.cREATEDBY}}</td>
+                <td>{{rNS_REFR_MASTER.cREATEDDATE | date:'medium'}}</td>
+                <td>{{rNS_REFR_MASTER.lASTMODIFIEDBY}}</td>
+                <td>{{rNS_REFR_MASTER.lASTMODIFIEDDATE | date:'medium'}}</td>
+                <td>
+                    <span *ngFor="let iD of rNS_REFR_MASTER.iDS; let last = last">
+                            <a class="form-control-static" [routerLink]="['../rnsrefrdetails', iD?.id ]">{{iD.id}}</a>{{last ? '' : ', '}}
+                        </span>
+                </td>
+                <td>
+                    <div *ngIf="rNS_REFR_MASTER.rNSCATGMASTER">
+                        <a [routerLink]="['../rnscatgmaster', rNS_REFR_MASTER.rNSCATGMASTER?.id ]" >{{rNS_REFR_MASTER.rNSCATGMASTER?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../rns-refr-master', rNS_REFR_MASTER.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'rns-refr-master/'+ rNS_REFR_MASTER.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'rns-refr-master/'+ rNS_REFR_MASTER.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

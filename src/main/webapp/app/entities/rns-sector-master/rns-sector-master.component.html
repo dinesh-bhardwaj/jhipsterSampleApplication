@@ -1,0 +1,68 @@
+<div>
+    <h2>
+        <span>RNS SECTOR MASTERS</span>
+        <button class="btn btn-primary float-right jh-create-entity create-rns-sector-master" [routerLink]="['/', { outlets: { popup: ['rns-sector-master-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span >
+            Create new RNS SECTOR MASTER
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="rNS_SECTOR_MASTERS">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span>ID</span></th>
+            <th><span>R NSCATGCODE</span></th>
+            <th><span>S ECTORCODE</span></th>
+            <th><span>S ECTORCODEDESC</span></th>
+            <th><span>R NSCATGMASTER</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let rNS_SECTOR_MASTER of rNS_SECTOR_MASTERS ;trackBy: trackId">
+                <td><a [routerLink]="['../rns-sector-master', rNS_SECTOR_MASTER.id ]">{{rNS_SECTOR_MASTER.id}}</a></td>
+                <td>{{rNS_SECTOR_MASTER.rNSCATGCODE}}</td>
+                <td>{{rNS_SECTOR_MASTER.sECTORCODE}}</td>
+                <td>{{rNS_SECTOR_MASTER.sECTORCODEDESC}}</td>
+                <td>
+                    <div *ngIf="rNS_SECTOR_MASTER.rNSCATGMASTER">
+                        <a [routerLink]="['../rnscatgmaster', rNS_SECTOR_MASTER.rNSCATGMASTER?.id ]" >{{rNS_SECTOR_MASTER.rNSCATGMASTER?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../rns-sector-master', rNS_SECTOR_MASTER.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'rns-sector-master/'+ rNS_SECTOR_MASTER.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'rns-sector-master/'+ rNS_SECTOR_MASTER.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

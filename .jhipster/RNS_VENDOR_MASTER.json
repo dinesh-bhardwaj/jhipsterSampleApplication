@@ -1,0 +1,40 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "vENDORCODE",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "vENDORMASTERCODE",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "vENDORNAME",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "vENDORUSERID",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "uSERNAME",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "eMAIL",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "mOBILENUMBER",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180206114920",
+    "entityTableName": "rns_vendor_master",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

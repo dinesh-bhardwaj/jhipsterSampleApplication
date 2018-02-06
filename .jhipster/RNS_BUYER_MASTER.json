@@ -1,0 +1,20 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "bUYERCODE",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "bUYERNAME",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180206114921",
+    "entityTableName": "rns_buyer_master",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

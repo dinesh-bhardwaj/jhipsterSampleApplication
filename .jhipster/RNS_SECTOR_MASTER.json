@@ -1,0 +1,31 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "rNSCATGMASTER",
+            "otherEntityName": "rNSCATGMASTER",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "rNSCATGCODE",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sECTORCODE",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sECTORCODEDESC",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180206114916",
+    "entityTableName": "rns_sector_master",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

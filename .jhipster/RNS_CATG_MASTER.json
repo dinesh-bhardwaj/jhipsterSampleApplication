@@ -1,0 +1,42 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "javadoc": "A relationship",
+            "relationshipName": "cATGCODE",
+            "otherEntityName": "rNSREFRMASTER",
+            "otherEntityRelationshipName": "rNS_CATG_MASTER"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "javadoc": "A relationship",
+            "relationshipName": "cATGCODE",
+            "otherEntityName": "rNSSECTORMASTER",
+            "otherEntityRelationshipName": "rNS_CATG_MASTER"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "javadoc": "A relationship",
+            "relationshipName": "cATGCODE",
+            "otherEntityName": "rNSTYPEMASTER",
+            "otherEntityRelationshipName": "rNS_CATG_MASTER"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "cATGCODE",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "cATGCODEDESC",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180206114918",
+    "entityTableName": "rns_catg_master",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

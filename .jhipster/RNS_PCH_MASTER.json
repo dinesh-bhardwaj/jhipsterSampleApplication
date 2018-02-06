@@ -1,0 +1,20 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "pCHCODE",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "pCHNAME",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180206114923",
+    "entityTableName": "rns_pch_master",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

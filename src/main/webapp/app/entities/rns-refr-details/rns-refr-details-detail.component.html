@@ -1,0 +1,54 @@
+
+<div *ngIf="rNS_REFR_DETAILS">
+    <h2><span>RNS REFR DETAILS</span> {{rNS_REFR_DETAILS.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span>R EFRID</span></dt>
+        <dd>
+            <span>{{rNS_REFR_DETAILS.rEFRID}}</span>
+        </dd>
+        <dt><span>S UBCODE</span></dt>
+        <dd>
+            <span>{{rNS_REFR_DETAILS.sUBCODE}}</span>
+        </dd>
+        <dt><span>S UBCODEDESC</span></dt>
+        <dd>
+            <span>{{rNS_REFR_DETAILS.sUBCODEDESC}}</span>
+        </dd>
+        <dt><span>S TATUS</span></dt>
+        <dd>
+            <span>{{rNS_REFR_DETAILS.sTATUS}}</span>
+        </dd>
+        <dt><span>C REATEDBY</span></dt>
+        <dd>
+            <span>{{rNS_REFR_DETAILS.cREATEDBY}}</span>
+        </dd>
+        <dt><span>C REATEDDATE</span></dt>
+        <dd>
+            <span>{{rNS_REFR_DETAILS.cREATEDDATE | date:'medium'}}</span>
+        </dd>
+        <dt><span>L ASTMODIFIEDBY</span></dt>
+        <dd>
+            <span>{{rNS_REFR_DETAILS.lASTMODIFIEDBY}}</span>
+        </dd>
+        <dt><span>L ASTMODIFIEDDATE</span></dt>
+        <dd>
+            <span>{{rNS_REFR_DETAILS.lASTMODIFIEDDATE | date:'medium'}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'rns-refr-details/'+ rNS_REFR_DETAILS.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span> Edit</span>
+    </button>
+</div>

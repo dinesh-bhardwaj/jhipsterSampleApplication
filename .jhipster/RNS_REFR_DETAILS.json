@@ -1,0 +1,53 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-many",
+            "javadoc": "Another side of the same relationship",
+            "relationshipName": "masterId",
+            "otherEntityName": "rNSREFRMASTER",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "iD"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "rEFRID",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sUBCODE",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sUBCODEDESC",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sTATUS",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "cREATEDBY",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "cREATEDDATE",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "lASTMODIFIEDBY",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lASTMODIFIEDDATE",
+            "fieldType": "Instant"
+        }
+    ],
+    "changelogDate": "20180206114913",
+    "entityTableName": "rns_refr_details",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

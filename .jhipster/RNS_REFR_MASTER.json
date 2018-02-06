@@ -1,0 +1,132 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-many",
+            "javadoc": "A relationship",
+            "otherEntityRelationshipName": "masterId",
+            "relationshipName": "iD",
+            "otherEntityName": "rNSREFRDETAILS",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipName": "rNSCATGMASTER",
+            "otherEntityName": "rNSCATGMASTER",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "rNSCATGCODE",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sUBCODE1",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sUBCODEDESC1",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sUBCODE2",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sUBCODEDESC2",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sUBCODE3",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sUBCODEDESC3",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sUBCODE4",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sUBCODEDESC4",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sUBCODE5",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sUBCODEDESC5",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sUBCODE6",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sUBCODEDESC6",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sUBCODE7",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sUBCODEDESC7",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sUBCODE8",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sUBCODEDESC8",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sUBCODE9",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sUBCODEDESC9",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sUBCODE10",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sUBCODEDESC10",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sTATUS",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "cREATEDBY",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "cREATEDDATE",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "lASTMODIFIEDBY",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lASTMODIFIEDDATE",
+            "fieldType": "Instant"
+        }
+    ],
+    "changelogDate": "20180206114912",
+    "entityTableName": "rns_refr_master",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

@@ -1,0 +1,62 @@
+<div>
+    <h2>
+        <span>RNS CRM REQUEST MASTERS</span>
+        <button class="btn btn-primary float-right jh-create-entity create-rns-crm-request-master" [routerLink]="['/', { outlets: { popup: ['rns-crm-request-master-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span >
+            Create new RNS CRM REQUEST MASTER
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="rNS_CRM_REQUEST_MASTERS">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span>ID</span></th>
+            <th><span>C RMCODE</span></th>
+            <th><span>B UYERCODE</span></th>
+            <th><span>B UYERNAME</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let rNS_CRM_REQUEST_MASTER of rNS_CRM_REQUEST_MASTERS ;trackBy: trackId">
+                <td><a [routerLink]="['../rns-crm-request-master', rNS_CRM_REQUEST_MASTER.id ]">{{rNS_CRM_REQUEST_MASTER.id}}</a></td>
+                <td>{{rNS_CRM_REQUEST_MASTER.cRMCODE}}</td>
+                <td>{{rNS_CRM_REQUEST_MASTER.bUYERCODE}}</td>
+                <td>{{rNS_CRM_REQUEST_MASTER.bUYERNAME}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../rns-crm-request-master', rNS_CRM_REQUEST_MASTER.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'rns-crm-request-master/'+ rNS_CRM_REQUEST_MASTER.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'rns-crm-request-master/'+ rNS_CRM_REQUEST_MASTER.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

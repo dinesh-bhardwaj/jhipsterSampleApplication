@@ -1,0 +1,172 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myRNS_REFR_MASTERLabel">Create or edit a RNS REFR MASTER</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!rNS_REFR_MASTER.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="rNS_REFR_MASTER.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_rNSCATGCODE">R NSCATGCODE</label>
+            <input type="text" class="form-control" name="rNSCATGCODE" id="field_rNSCATGCODE"
+                [(ngModel)]="rNS_REFR_MASTER.rNSCATGCODE" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_sUBCODE1">S UBCODE 1</label>
+            <input type="text" class="form-control" name="sUBCODE1" id="field_sUBCODE1"
+                [(ngModel)]="rNS_REFR_MASTER.sUBCODE1" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_sUBCODEDESC1">S UBCODEDESC 1</label>
+            <input type="text" class="form-control" name="sUBCODEDESC1" id="field_sUBCODEDESC1"
+                [(ngModel)]="rNS_REFR_MASTER.sUBCODEDESC1" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_sUBCODE2">S UBCODE 2</label>
+            <input type="text" class="form-control" name="sUBCODE2" id="field_sUBCODE2"
+                [(ngModel)]="rNS_REFR_MASTER.sUBCODE2" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_sUBCODEDESC2">S UBCODEDESC 2</label>
+            <input type="text" class="form-control" name="sUBCODEDESC2" id="field_sUBCODEDESC2"
+                [(ngModel)]="rNS_REFR_MASTER.sUBCODEDESC2" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_sUBCODE3">S UBCODE 3</label>
+            <input type="text" class="form-control" name="sUBCODE3" id="field_sUBCODE3"
+                [(ngModel)]="rNS_REFR_MASTER.sUBCODE3" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_sUBCODEDESC3">S UBCODEDESC 3</label>
+            <input type="text" class="form-control" name="sUBCODEDESC3" id="field_sUBCODEDESC3"
+                [(ngModel)]="rNS_REFR_MASTER.sUBCODEDESC3" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_sUBCODE4">S UBCODE 4</label>
+            <input type="text" class="form-control" name="sUBCODE4" id="field_sUBCODE4"
+                [(ngModel)]="rNS_REFR_MASTER.sUBCODE4" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_sUBCODEDESC4">S UBCODEDESC 4</label>
+            <input type="text" class="form-control" name="sUBCODEDESC4" id="field_sUBCODEDESC4"
+                [(ngModel)]="rNS_REFR_MASTER.sUBCODEDESC4" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_sUBCODE5">S UBCODE 5</label>
+            <input type="text" class="form-control" name="sUBCODE5" id="field_sUBCODE5"
+                [(ngModel)]="rNS_REFR_MASTER.sUBCODE5" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_sUBCODEDESC5">S UBCODEDESC 5</label>
+            <input type="text" class="form-control" name="sUBCODEDESC5" id="field_sUBCODEDESC5"
+                [(ngModel)]="rNS_REFR_MASTER.sUBCODEDESC5" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_sUBCODE6">S UBCODE 6</label>
+            <input type="text" class="form-control" name="sUBCODE6" id="field_sUBCODE6"
+                [(ngModel)]="rNS_REFR_MASTER.sUBCODE6" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_sUBCODEDESC6">S UBCODEDESC 6</label>
+            <input type="text" class="form-control" name="sUBCODEDESC6" id="field_sUBCODEDESC6"
+                [(ngModel)]="rNS_REFR_MASTER.sUBCODEDESC6" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_sUBCODE7">S UBCODE 7</label>
+            <input type="text" class="form-control" name="sUBCODE7" id="field_sUBCODE7"
+                [(ngModel)]="rNS_REFR_MASTER.sUBCODE7" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_sUBCODEDESC7">S UBCODEDESC 7</label>
+            <input type="text" class="form-control" name="sUBCODEDESC7" id="field_sUBCODEDESC7"
+                [(ngModel)]="rNS_REFR_MASTER.sUBCODEDESC7" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_sUBCODE8">S UBCODE 8</label>
+            <input type="text" class="form-control" name="sUBCODE8" id="field_sUBCODE8"
+                [(ngModel)]="rNS_REFR_MASTER.sUBCODE8" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_sUBCODEDESC8">S UBCODEDESC 8</label>
+            <input type="text" class="form-control" name="sUBCODEDESC8" id="field_sUBCODEDESC8"
+                [(ngModel)]="rNS_REFR_MASTER.sUBCODEDESC8" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_sUBCODE9">S UBCODE 9</label>
+            <input type="text" class="form-control" name="sUBCODE9" id="field_sUBCODE9"
+                [(ngModel)]="rNS_REFR_MASTER.sUBCODE9" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_sUBCODEDESC9">S UBCODEDESC 9</label>
+            <input type="text" class="form-control" name="sUBCODEDESC9" id="field_sUBCODEDESC9"
+                [(ngModel)]="rNS_REFR_MASTER.sUBCODEDESC9" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_sUBCODE10">S UBCODE 10</label>
+            <input type="text" class="form-control" name="sUBCODE10" id="field_sUBCODE10"
+                [(ngModel)]="rNS_REFR_MASTER.sUBCODE10" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_sUBCODEDESC10">S UBCODEDESC 10</label>
+            <input type="text" class="form-control" name="sUBCODEDESC10" id="field_sUBCODEDESC10"
+                [(ngModel)]="rNS_REFR_MASTER.sUBCODEDESC10" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_sTATUS">S TATUS</label>
+            <input type="text" class="form-control" name="sTATUS" id="field_sTATUS"
+                [(ngModel)]="rNS_REFR_MASTER.sTATUS" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_cREATEDBY">C REATEDBY</label>
+            <input type="text" class="form-control" name="cREATEDBY" id="field_cREATEDBY"
+                [(ngModel)]="rNS_REFR_MASTER.cREATEDBY" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_cREATEDDATE">C REATEDDATE</label>
+            <div class="d-flex">
+                <input id="field_cREATEDDATE" type="datetime-local" class="form-control" name="cREATEDDATE" [(ngModel)]="rNS_REFR_MASTER.cREATEDDATE"
+                />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_lASTMODIFIEDBY">L ASTMODIFIEDBY</label>
+            <input type="text" class="form-control" name="lASTMODIFIEDBY" id="field_lASTMODIFIEDBY"
+                [(ngModel)]="rNS_REFR_MASTER.lASTMODIFIEDBY" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_lASTMODIFIEDDATE">L ASTMODIFIEDDATE</label>
+            <div class="d-flex">
+                <input id="field_lASTMODIFIEDDATE" type="datetime-local" class="form-control" name="lASTMODIFIEDDATE" [(ngModel)]="rNS_REFR_MASTER.lASTMODIFIEDDATE"
+                />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="field_iD">I D</label>
+            <select class="form-control" id="field_iD" multiple name="iD" [(ngModel)]="rNS_REFR_MASTER.iDS">
+                <option [ngValue]="getSelected(rNS_REFR_MASTER.iDS, rNSREFRDETAILSOption)" *ngFor="let rNSREFRDETAILSOption of rnsrefrdetails; trackBy: trackRNSREFRDETAILSById">{{rNSREFRDETAILSOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_rNSCATGMASTER">R NSCATGMASTER</label>
+            <select class="form-control" id="field_rNSCATGMASTER" name="rNSCATGMASTER" [(ngModel)]="rNS_REFR_MASTER.rNSCATGMASTER" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="rNSCATGMASTEROption.id === rNS_REFR_MASTER.rNSCATGMASTER?.id ? rNS_REFR_MASTER.rNSCATGMASTER : rNSCATGMASTEROption" *ngFor="let rNSCATGMASTEROption of rnscatgmasters; trackBy: trackRNSCATGMASTERById">{{rNSCATGMASTEROption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

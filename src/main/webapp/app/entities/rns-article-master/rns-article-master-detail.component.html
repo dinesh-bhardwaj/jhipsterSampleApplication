@@ -1,0 +1,30 @@
+
+<div *ngIf="rNS_ARTICLE_MASTER">
+    <h2><span>RNS ARTICLE MASTER</span> {{rNS_ARTICLE_MASTER.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span>A RTICLECODE</span></dt>
+        <dd>
+            <span>{{rNS_ARTICLE_MASTER.aRTICLECODE}}</span>
+        </dd>
+        <dt><span>A RTICLECODEDESC</span></dt>
+        <dd>
+            <span>{{rNS_ARTICLE_MASTER.aRTICLECODEDESC}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'rns-article-master/'+ rNS_ARTICLE_MASTER.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span> Edit</span>
+    </button>
+</div>

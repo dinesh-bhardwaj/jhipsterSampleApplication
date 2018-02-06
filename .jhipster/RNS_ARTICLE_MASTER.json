@@ -1,0 +1,20 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "aRTICLECODE",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "aRTICLECODEDESC",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180206114914",
+    "entityTableName": "rns_article_master",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

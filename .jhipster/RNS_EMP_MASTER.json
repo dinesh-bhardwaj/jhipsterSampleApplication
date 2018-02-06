@@ -1,0 +1,20 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "eMPCODE",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "eMPNAME",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180206114915",
+    "entityTableName": "rns_emp_master",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

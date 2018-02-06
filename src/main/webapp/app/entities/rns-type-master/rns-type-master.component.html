@@ -1,0 +1,68 @@
+<div>
+    <h2>
+        <span>RNS TYPE MASTERS</span>
+        <button class="btn btn-primary float-right jh-create-entity create-rns-type-master" [routerLink]="['/', { outlets: { popup: ['rns-type-master-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span >
+            Create new RNS TYPE MASTER
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="rNS_TYPE_MASTERS">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span>ID</span></th>
+            <th><span>R NSCATGCODE</span></th>
+            <th><span>T YPECODE</span></th>
+            <th><span>T YPECODEDESC</span></th>
+            <th><span>R NSCATGMASTER</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let rNS_TYPE_MASTER of rNS_TYPE_MASTERS ;trackBy: trackId">
+                <td><a [routerLink]="['../rns-type-master', rNS_TYPE_MASTER.id ]">{{rNS_TYPE_MASTER.id}}</a></td>
+                <td>{{rNS_TYPE_MASTER.rNSCATGCODE}}</td>
+                <td>{{rNS_TYPE_MASTER.tYPECODE}}</td>
+                <td>{{rNS_TYPE_MASTER.tYPECODEDESC}}</td>
+                <td>
+                    <div *ngIf="rNS_TYPE_MASTER.rNSCATGMASTER">
+                        <a [routerLink]="['../rnscatgmaster', rNS_TYPE_MASTER.rNSCATGMASTER?.id ]" >{{rNS_TYPE_MASTER.rNSCATGMASTER?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../rns-type-master', rNS_TYPE_MASTER.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'rns-type-master/'+ rNS_TYPE_MASTER.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'rns-type-master/'+ rNS_TYPE_MASTER.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

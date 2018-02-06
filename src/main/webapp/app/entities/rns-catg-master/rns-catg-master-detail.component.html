@@ -1,0 +1,30 @@
+
+<div *ngIf="rNS_CATG_MASTER">
+    <h2><span>RNS CATG MASTER</span> {{rNS_CATG_MASTER.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span>C ATGCODE</span></dt>
+        <dd>
+            <span>{{rNS_CATG_MASTER.cATGCODE}}</span>
+        </dd>
+        <dt><span>C ATGCODEDESC</span></dt>
+        <dd>
+            <span>{{rNS_CATG_MASTER.cATGCODEDESC}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'rns-catg-master/'+ rNS_CATG_MASTER.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span> Edit</span>
+    </button>
+</div>

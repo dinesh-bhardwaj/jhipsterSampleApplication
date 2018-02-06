@@ -1,0 +1,47 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myRNS_TYPE_MASTERLabel">Create or edit a RNS TYPE MASTER</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!rNS_TYPE_MASTER.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="rNS_TYPE_MASTER.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_rNSCATGCODE">R NSCATGCODE</label>
+            <input type="text" class="form-control" name="rNSCATGCODE" id="field_rNSCATGCODE"
+                [(ngModel)]="rNS_TYPE_MASTER.rNSCATGCODE" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_tYPECODE">T YPECODE</label>
+            <input type="text" class="form-control" name="tYPECODE" id="field_tYPECODE"
+                [(ngModel)]="rNS_TYPE_MASTER.tYPECODE" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_tYPECODEDESC">T YPECODEDESC</label>
+            <input type="text" class="form-control" name="tYPECODEDESC" id="field_tYPECODEDESC"
+                [(ngModel)]="rNS_TYPE_MASTER.tYPECODEDESC" />
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" for="field_rNSCATGMASTER">R NSCATGMASTER</label>
+            <select class="form-control" id="field_rNSCATGMASTER" name="rNSCATGMASTER" [(ngModel)]="rNS_TYPE_MASTER.rNSCATGMASTER" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="rNSCATGMASTEROption.id === rNS_TYPE_MASTER.rNSCATGMASTER?.id ? rNS_TYPE_MASTER.rNSCATGMASTER : rNSCATGMASTEROption" *ngFor="let rNSCATGMASTEROption of rnscatgmasters; trackBy: trackRNSCATGMASTERById">{{rNSCATGMASTEROption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>
