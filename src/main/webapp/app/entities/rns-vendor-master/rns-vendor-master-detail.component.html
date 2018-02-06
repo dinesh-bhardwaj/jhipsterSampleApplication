@@ -1,0 +1,50 @@
+
+<div *ngIf="rNS_VENDOR_MASTER">
+    <h2><span>RNS VENDOR MASTER</span> {{rNS_VENDOR_MASTER.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span>V ENDORCODE</span></dt>
+        <dd>
+            <span>{{rNS_VENDOR_MASTER.vENDORCODE}}</span>
+        </dd>
+        <dt><span>V ENDORMASTERCODE</span></dt>
+        <dd>
+            <span>{{rNS_VENDOR_MASTER.vENDORMASTERCODE}}</span>
+        </dd>
+        <dt><span>V ENDORNAME</span></dt>
+        <dd>
+            <span>{{rNS_VENDOR_MASTER.vENDORNAME}}</span>
+        </dd>
+        <dt><span>V ENDORUSERID</span></dt>
+        <dd>
+            <span>{{rNS_VENDOR_MASTER.vENDORUSERID}}</span>
+        </dd>
+        <dt><span>U SERNAME</span></dt>
+        <dd>
+            <span>{{rNS_VENDOR_MASTER.uSERNAME}}</span>
+        </dd>
+        <dt><span>E MAIL</span></dt>
+        <dd>
+            <span>{{rNS_VENDOR_MASTER.eMAIL}}</span>
+        </dd>
+        <dt><span>M OBILENUMBER</span></dt>
+        <dd>
+            <span>{{rNS_VENDOR_MASTER.mOBILENUMBER}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'rns-vendor-master/'+ rNS_VENDOR_MASTER.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span> Edit</span>
+    </button>
+</div>

@@ -1,0 +1,20 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "cODE",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "cODEDESC",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180206114922",
+    "entityTableName": "rns_del_place_master",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

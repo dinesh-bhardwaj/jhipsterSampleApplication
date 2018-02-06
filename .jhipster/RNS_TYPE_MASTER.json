@@ -1,0 +1,31 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "rNSCATGMASTER",
+            "otherEntityName": "rNSCATGMASTER",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "rNSCATGCODE",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tYPECODE",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tYPECODEDESC",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180206114917",
+    "entityTableName": "rns_type_master",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

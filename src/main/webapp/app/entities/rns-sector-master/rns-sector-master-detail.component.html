@@ -1,0 +1,40 @@
+
+<div *ngIf="rNS_SECTOR_MASTER">
+    <h2><span>RNS SECTOR MASTER</span> {{rNS_SECTOR_MASTER.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span>R NSCATGCODE</span></dt>
+        <dd>
+            <span>{{rNS_SECTOR_MASTER.rNSCATGCODE}}</span>
+        </dd>
+        <dt><span>S ECTORCODE</span></dt>
+        <dd>
+            <span>{{rNS_SECTOR_MASTER.sECTORCODE}}</span>
+        </dd>
+        <dt><span>S ECTORCODEDESC</span></dt>
+        <dd>
+            <span>{{rNS_SECTOR_MASTER.sECTORCODEDESC}}</span>
+        </dd>
+        <dt><span>R NSCATGMASTER</span></dt>
+        <dd>
+            <div *ngIf="rNS_SECTOR_MASTER.rNSCATGMASTER">
+                <a [routerLink]="['/rnscatgmaster', rNS_SECTOR_MASTER.rNSCATGMASTER?.id]">{{rNS_SECTOR_MASTER.rNSCATGMASTER?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'rns-sector-master/'+ rNS_SECTOR_MASTER.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span> Edit</span>
+    </button>
+</div>

@@ -1,0 +1,69 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myRNS_REFR_DETAILSLabel">Create or edit a RNS REFR DETAILS</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!rNS_REFR_DETAILS.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="rNS_REFR_DETAILS.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_rEFRID">R EFRID</label>
+            <input type="text" class="form-control" name="rEFRID" id="field_rEFRID"
+                [(ngModel)]="rNS_REFR_DETAILS.rEFRID" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_sUBCODE">S UBCODE</label>
+            <input type="text" class="form-control" name="sUBCODE" id="field_sUBCODE"
+                [(ngModel)]="rNS_REFR_DETAILS.sUBCODE" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_sUBCODEDESC">S UBCODEDESC</label>
+            <input type="text" class="form-control" name="sUBCODEDESC" id="field_sUBCODEDESC"
+                [(ngModel)]="rNS_REFR_DETAILS.sUBCODEDESC" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_sTATUS">S TATUS</label>
+            <input type="text" class="form-control" name="sTATUS" id="field_sTATUS"
+                [(ngModel)]="rNS_REFR_DETAILS.sTATUS" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_cREATEDBY">C REATEDBY</label>
+            <input type="text" class="form-control" name="cREATEDBY" id="field_cREATEDBY"
+                [(ngModel)]="rNS_REFR_DETAILS.cREATEDBY" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_cREATEDDATE">C REATEDDATE</label>
+            <div class="d-flex">
+                <input id="field_cREATEDDATE" type="datetime-local" class="form-control" name="cREATEDDATE" [(ngModel)]="rNS_REFR_DETAILS.cREATEDDATE"
+                />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_lASTMODIFIEDBY">L ASTMODIFIEDBY</label>
+            <input type="text" class="form-control" name="lASTMODIFIEDBY" id="field_lASTMODIFIEDBY"
+                [(ngModel)]="rNS_REFR_DETAILS.lASTMODIFIEDBY" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_lASTMODIFIEDDATE">L ASTMODIFIEDDATE</label>
+            <div class="d-flex">
+                <input id="field_lASTMODIFIEDDATE" type="datetime-local" class="form-control" name="lASTMODIFIEDDATE" [(ngModel)]="rNS_REFR_DETAILS.lASTMODIFIEDDATE"
+                />
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

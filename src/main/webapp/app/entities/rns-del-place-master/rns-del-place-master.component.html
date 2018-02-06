@@ -1,0 +1,60 @@
+<div>
+    <h2>
+        <span>RNS DEL PLACE MASTERS</span>
+        <button class="btn btn-primary float-right jh-create-entity create-rns-del-place-master" [routerLink]="['/', { outlets: { popup: ['rns-del-place-master-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span >
+            Create new RNS DEL PLACE MASTER
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="rNS_DEL_PLACE_MASTERS">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span>ID</span></th>
+            <th><span>C ODE</span></th>
+            <th><span>C ODEDESC</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let rNS_DEL_PLACE_MASTER of rNS_DEL_PLACE_MASTERS ;trackBy: trackId">
+                <td><a [routerLink]="['../rns-del-place-master', rNS_DEL_PLACE_MASTER.id ]">{{rNS_DEL_PLACE_MASTER.id}}</a></td>
+                <td>{{rNS_DEL_PLACE_MASTER.cODE}}</td>
+                <td>{{rNS_DEL_PLACE_MASTER.cODEDESC}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../rns-del-place-master', rNS_DEL_PLACE_MASTER.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'rns-del-place-master/'+ rNS_DEL_PLACE_MASTER.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'rns-del-place-master/'+ rNS_DEL_PLACE_MASTER.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

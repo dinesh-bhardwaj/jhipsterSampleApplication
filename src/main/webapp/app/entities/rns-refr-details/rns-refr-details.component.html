@@ -1,0 +1,72 @@
+<div>
+    <h2>
+        <span>RNS REFR DETAILS</span>
+        <button class="btn btn-primary float-right jh-create-entity create-rns-refr-details" [routerLink]="['/', { outlets: { popup: ['rns-refr-details-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span >
+            Create new RNS REFR DETAILS
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="rNS_REFR_DETAILS">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span>ID</span></th>
+            <th><span>R EFRID</span></th>
+            <th><span>S UBCODE</span></th>
+            <th><span>S UBCODEDESC</span></th>
+            <th><span>S TATUS</span></th>
+            <th><span>C REATEDBY</span></th>
+            <th><span>C REATEDDATE</span></th>
+            <th><span>L ASTMODIFIEDBY</span></th>
+            <th><span>L ASTMODIFIEDDATE</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let rNS_REFR_DETAILS of rNS_REFR_DETAILS ;trackBy: trackId">
+                <td><a [routerLink]="['../rns-refr-details', rNS_REFR_DETAILS.id ]">{{rNS_REFR_DETAILS.id}}</a></td>
+                <td>{{rNS_REFR_DETAILS.rEFRID}}</td>
+                <td>{{rNS_REFR_DETAILS.sUBCODE}}</td>
+                <td>{{rNS_REFR_DETAILS.sUBCODEDESC}}</td>
+                <td>{{rNS_REFR_DETAILS.sTATUS}}</td>
+                <td>{{rNS_REFR_DETAILS.cREATEDBY}}</td>
+                <td>{{rNS_REFR_DETAILS.cREATEDDATE | date:'medium'}}</td>
+                <td>{{rNS_REFR_DETAILS.lASTMODIFIEDBY}}</td>
+                <td>{{rNS_REFR_DETAILS.lASTMODIFIEDDATE | date:'medium'}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../rns-refr-details', rNS_REFR_DETAILS.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'rns-refr-details/'+ rNS_REFR_DETAILS.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'rns-refr-details/'+ rNS_REFR_DETAILS.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

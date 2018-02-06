@@ -1,0 +1,60 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myRNS_VENDOR_MASTERLabel">Create or edit a RNS VENDOR MASTER</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!rNS_VENDOR_MASTER.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="rNS_VENDOR_MASTER.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_vENDORCODE">V ENDORCODE</label>
+            <input type="text" class="form-control" name="vENDORCODE" id="field_vENDORCODE"
+                [(ngModel)]="rNS_VENDOR_MASTER.vENDORCODE" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_vENDORMASTERCODE">V ENDORMASTERCODE</label>
+            <input type="text" class="form-control" name="vENDORMASTERCODE" id="field_vENDORMASTERCODE"
+                [(ngModel)]="rNS_VENDOR_MASTER.vENDORMASTERCODE" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_vENDORNAME">V ENDORNAME</label>
+            <input type="text" class="form-control" name="vENDORNAME" id="field_vENDORNAME"
+                [(ngModel)]="rNS_VENDOR_MASTER.vENDORNAME" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_vENDORUSERID">V ENDORUSERID</label>
+            <input type="number" class="form-control" name="vENDORUSERID" id="field_vENDORUSERID"
+                [(ngModel)]="rNS_VENDOR_MASTER.vENDORUSERID" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_uSERNAME">U SERNAME</label>
+            <input type="text" class="form-control" name="uSERNAME" id="field_uSERNAME"
+                [(ngModel)]="rNS_VENDOR_MASTER.uSERNAME" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_eMAIL">E MAIL</label>
+            <input type="text" class="form-control" name="eMAIL" id="field_eMAIL"
+                [(ngModel)]="rNS_VENDOR_MASTER.eMAIL" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_mOBILENUMBER">M OBILENUMBER</label>
+            <input type="text" class="form-control" name="mOBILENUMBER" id="field_mOBILENUMBER"
+                [(ngModel)]="rNS_VENDOR_MASTER.mOBILENUMBER" />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

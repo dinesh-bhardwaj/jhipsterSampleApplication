@@ -1,0 +1,35 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myRNS_PAY_TERMS_MASTERLabel">Create or edit a RNS PAY TERMS MASTER</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!rNS_PAY_TERMS_MASTER.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="rNS_PAY_TERMS_MASTER.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_pAYTERMSCODE">P AYTERMSCODE</label>
+            <input type="text" class="form-control" name="pAYTERMSCODE" id="field_pAYTERMSCODE"
+                [(ngModel)]="rNS_PAY_TERMS_MASTER.pAYTERMSCODE" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_pAYTERMSCODEDESC">P AYTERMSCODEDESC</label>
+            <input type="text" class="form-control" name="pAYTERMSCODEDESC" id="field_pAYTERMSCODEDESC"
+                [(ngModel)]="rNS_PAY_TERMS_MASTER.pAYTERMSCODEDESC" />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

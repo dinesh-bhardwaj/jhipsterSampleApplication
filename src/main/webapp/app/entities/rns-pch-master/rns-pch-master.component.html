@@ -1,0 +1,60 @@
+<div>
+    <h2>
+        <span>RNS PCH MASTERS</span>
+        <button class="btn btn-primary float-right jh-create-entity create-rns-pch-master" [routerLink]="['/', { outlets: { popup: ['rns-pch-master-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span >
+            Create new RNS PCH MASTER
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="rNS_PCH_MASTERS">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span>ID</span></th>
+            <th><span>P CHCODE</span></th>
+            <th><span>P CHNAME</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let rNS_PCH_MASTER of rNS_PCH_MASTERS ;trackBy: trackId">
+                <td><a [routerLink]="['../rns-pch-master', rNS_PCH_MASTER.id ]">{{rNS_PCH_MASTER.id}}</a></td>
+                <td>{{rNS_PCH_MASTER.pCHCODE}}</td>
+                <td>{{rNS_PCH_MASTER.pCHNAME}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../rns-pch-master', rNS_PCH_MASTER.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'rns-pch-master/'+ rNS_PCH_MASTER.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'rns-pch-master/'+ rNS_PCH_MASTER.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

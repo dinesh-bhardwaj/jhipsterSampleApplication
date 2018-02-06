@@ -1,0 +1,35 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myRNS_PCH_MASTERLabel">Create or edit a RNS PCH MASTER</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!rNS_PCH_MASTER.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="rNS_PCH_MASTER.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_pCHCODE">P CHCODE</label>
+            <input type="text" class="form-control" name="pCHCODE" id="field_pCHCODE"
+                [(ngModel)]="rNS_PCH_MASTER.pCHCODE" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_pCHNAME">P CHNAME</label>
+            <input type="text" class="form-control" name="pCHNAME" id="field_pCHNAME"
+                [(ngModel)]="rNS_PCH_MASTER.pCHNAME" />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

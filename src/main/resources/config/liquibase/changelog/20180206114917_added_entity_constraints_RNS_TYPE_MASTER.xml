@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity RNS_TYPE_MASTER.
+    -->
+    <changeSet id="20180206114917-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="rnscatgmaster_id"
+                                 baseTableName="rns_type_master"
+                                 constraintName="fk_rns_type_master_rnscatgmaster_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="rnscatgmaster"/>
+
+    </changeSet>
+</databaseChangeLog>

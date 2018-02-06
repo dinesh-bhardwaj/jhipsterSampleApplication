@@ -5,6 +5,22 @@
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180206114912_added_entity_RNS_REFR_MASTER.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180206114913_added_entity_RNS_REFR_DETAILS.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180206114914_added_entity_RNS_ARTICLE_MASTER.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180206114915_added_entity_RNS_EMP_MASTER.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180206114916_added_entity_RNS_SECTOR_MASTER.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180206114917_added_entity_RNS_TYPE_MASTER.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180206114918_added_entity_RNS_CATG_MASTER.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180206114919_added_entity_RNS_PAY_TERMS_MASTER.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180206114920_added_entity_RNS_VENDOR_MASTER.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180206114921_added_entity_RNS_BUYER_MASTER.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180206114922_added_entity_RNS_DEL_PLACE_MASTER.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180206114923_added_entity_RNS_PCH_MASTER.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180206114924_added_entity_RNS_CRM_REQUEST_MASTER.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20180206114912_added_entity_constraints_RNS_REFR_MASTER.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180206114916_added_entity_constraints_RNS_SECTOR_MASTER.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180206114917_added_entity_constraints_RNS_TYPE_MASTER.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

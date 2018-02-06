@@ -1,0 +1,160 @@
+entity RNS_REFR_MASTER {
+	ID Integer,
+    RNS_CATG_CODE String,
+    RNS_CATG_CODE String,
+    SUB_CODE1 String,
+    SUB_CODE_DESC1 String,
+    SUB_CODE2 String,
+    SUB_CODE_DESC2 String,
+    SUB_CODE3 String,
+    SUB_CODE_DESC3 String,
+    SUB_CODE4 String,
+    SUB_CODE_DESC4 String,
+    SUB_CODE5 String,
+    SUB_CODE_DESC5 String,
+    SUB_CODE6 String,
+    SUB_CODE_DESC6 String,
+    SUB_CODE7 String,
+    SUB_CODE_DESC7 String,
+    SUB_CODE8 String,
+    SUB_CODE_DESC8 String,
+    SUB_CODE9 String,
+    SUB_CODE_DESC9 String,
+    SUB_CODE10 String,
+    SUB_CODE_DESC10 String,
+    STATUS String,
+    CREATED_BY String,
+    CREATED_DATE Instant,
+    LAST_MODIFIED_BY String,
+    LAST_MODIFIED_DATE Instant    
+}
+
+
+entity RNS_REFR_DETAILS
+{
+	REFR_ID	String,
+    SUB_CODE	String,
+    SUB_CODE_DESC	String,
+    STATUS	String,
+    CREATED_BY	String,
+    CREATED_DATE Instant,
+    LAST_MODIFIED_BY String,
+    LAST_MODIFIED_DATE	Instant
+
+}
+
+entity RNS_ARTICLE_MASTER
+{
+	ARTICLE_CODE	String,
+	ARTICLE_CODE_DESC	String
+}
+
+entity RNS_EMP_MASTER {	
+  EMP_CODE	String,
+  EMP_NAME	String
+}
+
+
+
+entity RNS_SECTOR_MASTER {	
+	RNS_CATG_CODE	String,
+	SECTOR_CODE	String,
+	SECTOR_CODE_DESC String
+}
+entity RNS_TYPE_MASTER {	
+	RNS_CATG_CODE	String,
+	TYPE_CODE	String,
+	TYPE_CODE_DESC	String
+	}
+entity RNS_CATG_MASTER {	
+	CATG_CODE	String,
+	CATG_CODE_DESC	String
+}
+
+entity RNS_PAY_TERMS_MASTER {	
+	PAY_TERMS_CODE	String,
+	PAY_TERMS_CODE_DESC	String
+	}
+	
+entity RNS_VENDOR_MASTER {	
+	VENDOR_CODE	String,
+	VENDOR_MASTER_CODE	String,
+	VENDOR_NAME	String,
+	VENDOR_USER_ID	Integer
+	USER_NAME	String,
+	EMAIL	String,
+	MOBILE_NUMBER	String
+	}
+entity RNS_BUYER_MASTER {	
+	BUYER_CODE	String,
+	BUYER_NAME	String
+	}
+    
+entity RNS_DEL_PLACE_MASTER {	
+	CODE	String,
+	CODE_DESC	String
+}
+entity RNS_PCH_MASTER {	
+	PCH_CODE	String,
+	PCH_NAME	String
+	}
+entity RNS_CRM_REQUEST_MASTER {	
+	CRM_CODE	Integer
+	BUYER_CODE	String,
+	BUYER_NAME	String
+}
+
+
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+	/**
+	* A relationship
+	*/
+	RNS_CATG_MASTER{CATG_CODE} to
+	/**
+	* Another side of the same relationship
+	*/
+	RNS_REFR_MASTER
+}
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+	/**
+	* A relationship
+	*/
+	RNS_CATG_MASTER{CATG_CODE} to
+	/**
+	* Another side of the same relationship
+	*/
+	RNS_SECTOR_MASTER
+}
+
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+	/**
+	* A relationship
+	*/
+	RNS_CATG_MASTER{CATG_CODE} to
+	/**
+	* Another side of the same relationship
+	*/
+	RNS_TYPE_MASTER
+}
+
+// defining multiple OneToMany relationships with comments
+relationship ManyToMany {
+	/**
+	* A relationship
+	*/
+	RNS_REFR_MASTER{ID} to
+	/**
+	* Another side of the same relationship
+	*/
+	 RNS_REFR_DETAILS{MasterId}
+}
+
+
+
+
